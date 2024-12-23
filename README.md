@@ -19,7 +19,7 @@ First, clone the repository:
 ```sh
 git clone https://github.com/USERNAME/sign-language-detection.git
 cd sign-language-detection
-
+```
 Then, create a virtual environment and install the dependencies:
 
 ```sh
