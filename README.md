@@ -22,14 +22,14 @@ cd sign-language-detection
 
 Then, create a virtual environment and install the dependencies:
 
-sh
+```sh
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 pip install -r requirements.txt
 
 Usage
 To run the sign language detection, execute the following command:
-sh
+```sh
 python sign_language_detection.py
 
 Press q to quit the camera feed.
