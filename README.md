@@ -29,7 +29,9 @@ pip install -r requirements.txt
 
 Usage
 To run the sign language detection, execute the following command:
+
 ```sh
 python sign_language_detection.py
+```
 
 Press q to quit the camera feed.
