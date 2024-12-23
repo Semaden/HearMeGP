@@ -1,9 +1,10 @@
 import cv2
+import os
 from inference_sdk import InferenceHTTPClient
 
 # API ve model bilgileri
 API_URL = "https://detect.roboflow.com"
-API_KEY = "Gs0X6B7FVqulAniaOzPh"
+API_KEY = os.getenv("API_KEY")
 MODEL_ID = "turk-isaret-dili/2"
 
 # Inference HTTP Client oluştur
