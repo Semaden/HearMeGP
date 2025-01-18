@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşaret Dili Algılayıcı</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #video {
+            border: 2px solid black;
+            margin-bottom: 20px;
+        }
+        #detected-sign {
+            font-size: 24px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>İşaret Dili Algılayıcı</h1>
+    <img id="video" src="{{ url_for('video_feed') }}" alt="Video Feed">
+    <div id="detected-sign">Algılanan Kelime: Yok</div>
+
+    <script>
+        // Algılanan kelimeyi her saniye yenile
+        setInterval(function() {
+            fetch('/get_detected_sign')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.detected_sign !== "Algılanan kelime bulunamadı.") {
+                        document.getElementById('detected-sign').innerText = 'Algılanan Kelime: ' + data.detected_sign;
+                    }
+                });
+        }, 1000);
+    </script>
+</body>
+</html>
